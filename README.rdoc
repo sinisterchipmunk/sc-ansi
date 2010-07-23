@@ -1,6 +1,43 @@
 = sc-ansi
 
-Description goes here.
+Handles every aspect (that I could think of) of dealing with ANSI escape sequences. You can produce ANSI codes easily
+enough:
+
+  require 'sc-ansi'                              # or just require 'ansi' if you prefer.
+  
+  "a string!".red                                #=> a red string!
+  "a string!".blue                               #=> a blue string!
+  "a string!".red + "another string!".blue       #=> a red string and a blue string!
+  
+  # or...
+  include ANSI
+  
+  red  { "a string!" }                           #=> a red string!
+  blue { "a string!" }                           #=> a blue string!
+  
+  red + "a string!" + blue + "another string!"   #=> a red string and a blue string!
+  
+== Parsing ANSI Codes
+
+The unique thing about sc-ansi is that it can also parse ANSI codes out of an input string. Useful if you're writing
+your own console application and you want to interpret, say, the UP arrow for history recall.
+
+  include ANSI                                   # for the escape codes
+  
+  string = move_up + " hello " + move_down       #=> "\e[A hello \e[B"
+  string.ansi_sequences                          #=> [ ANSI::CURSOR_UP, ANSI::CURSOR_DOWN ]
+  
+  string.replace_ansi do |sequence|              # sequence is an instance of ANSI::Match
+    case sequence
+      when ANSI::CURSOR_UP                       # or ANSI::CUU
+        "(up)"
+      when ANSI::CURSOR_DOWN                     # or ANSI::CUD
+        "(down)" 
+    end
+  end
+  #=> "(up) hello (down)"
+  
+
 
 == Note on Patches/Pull Requests
  
