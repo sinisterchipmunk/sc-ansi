@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Colin MacKenzie IV"]
-  s.date = %q{2010-07-23}
+  s.date = %q{2010-08-05}
   s.description = %q{Handles every aspect (that I could think of) of dealing with ANSI escape sequences.}
   s.email = %q{sinisterchipmunk@gmail.com}
   s.extra_rdoc_files = [
@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
      "lib/core_ext/object.rb",
      "lib/core_ext/string.rb",
      "lib/sc-ansi.rb",
+     "sc-ansi.gemspec",
      "spec/lib/ansi/color_spec.rb",
      "spec/lib/ansi/cursor_spec.rb",
      "spec/lib/ansi/display_spec.rb",
