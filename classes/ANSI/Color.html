@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: ANSI::Color</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">ANSI::Color</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ansi/color_rb.html">
+                lib/ansi/color.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Defines various <a href="../ANSI.html">ANSI</a> escape sequences relating
+to terminal color manipulation.
+</p>
+<p>
+A few low-level methods are defined:
+</p>
+<ul>
+<li>set_color(*values)
+
+<ul>
+<li>takes 1 or more numeric color/attribute codes and produces the appropriate
+escape sequence.
+
+</li>
+</ul>
+</li>
+<li>reset_color
+
+<ul>
+<li>takes no arguments and resets terminal color and attributes to normal.
+
+</li>
+</ul>
+</li>
+</ul>
+<p>
+A number of higher-level methods are defined. None of them take any
+arguments, and they have the effect that their name implies:
+</p>
+<p>
+Attribute methods:
+</p>
+<pre>
+  regular    (same as reset_color)
+  bold
+  underscore
+  blink
+  reverse_video
+  concealed
+</pre>
+<p>
+Foreground color methods:
+</p>
+<pre>
+  black   / fg_black
+  red     / fg_red
+  green   / fg_green
+  yellow  / fg_yellow
+  blue    / fg_blue
+  magenta / fg_magenta
+  cyan    / fg_cyan
+  white   / fg_white
+</pre>
+<p>
+Background color methods:
+</p>
+<pre>
+  bg_black
+  bg_red
+  bg_green
+  bg_yellow
+  bg_blue
+  bg_magenta
+  bg_cyan
+  bg_white
+</pre>
+<p>
+Every combination of the above is also generated as a single method call,
+producing results including (but not limited to):
+</p>
+<pre>
+  regular_red
+  bold_red
+  underscore_red
+  blink_red
+  reverse_video_red
+  concealed_red
+  red_on_white / regular_red_on_white
+  bold_red_on_white
+  underscore_red_on_white
+  blink_red_on_white
+  . . .
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
